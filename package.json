@@ -1,0 +1,26 @@
+{
+  "name": "cassandra-copy-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "dist-cp": "copyfiles app/**/* dist",
+    "dist-secret": "copyfiles -u 2 NEVER_COMMIT/secrets/**/* dist/app/secrets",
+    "run": "node dist/app/index.js",
+    "start": "tsc && npm run dist-cp && npm run dist-secret && npm run run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cassandra-driver": "^0.8.10",
+    "cassandra-driver": "^3.2.2",
+    "object-hash": "^1.1.8",
+    "protobufjs": "^6.8.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^1.2.0",
+    "typescript": "^2.4.2"
+  }
+}
